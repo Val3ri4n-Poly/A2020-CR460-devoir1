@@ -1,5 +1,6 @@
 # Devoir 1
 ## Énoncé
+//////////
 
 À partir de GitHub, vous copierez le [repository](https://github.com/matbilodeau/A2020-CR460-devoir1)
 et y appliquerez les modifications nécessaires afin de déployer l'infrastructure
