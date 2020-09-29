@@ -28,8 +28,8 @@ resource "google_compute_instance" "instance2" {
 
   boot_disk {
     initialize_params {
-//      image = "fedora-coreos-cloud/fedora-coreos-stable"
-      image = "debian-cloud/debian-10"
+      image = "fedora-coreos-cloud/fedora-coreos-stable"
+//      image = "debian-cloud/debian-10"
     }
   }
 
@@ -76,7 +76,7 @@ resource "google_compute_instance" "instance4" {
   }
 
   network_interface {
-    subnetwork = google_compute_subnetwork.prod-interne.self_link
+    network = "default"
     access_config {
     }
   }
