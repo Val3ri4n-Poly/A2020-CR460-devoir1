@@ -49,16 +49,5 @@ resource "google_compute_firewall" "ssh-interne" {
     protocol = "tcp"
     ports    = ["22"]
   }
-  source_ranges = ["10.0.3.0/24"]
-}
-
-resource "google_compute_firewall" "tcp-traitement" {
-  name    = "tcp-traitement"
-  network = google_compute_network.project_id.name
-  target_tags = ["traitement"]
-  allow {
-    protocol = "tcp"
-    ports    = ["2846", "5462"]
-  }
-  source_ranges = ["10.0.2.0/24"]
+  source_ranges = ["0.0.0.0/0"]
 }
