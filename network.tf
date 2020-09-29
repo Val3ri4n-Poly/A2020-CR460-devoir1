@@ -37,28 +37,28 @@ resource "google_compute_firewall" "http-public" {
   target_tags = ["public-web"]
   allow {
     protocol = "tcp"
-    ports    = ["80, 443"]
+    ports    = ["80", "443"]
   }
 }
 
 resource "google_compute_firewall" "ssh-interne" {
   name    = "ssh-interne"
   network = google_compute_network.project_id.name
-  source_ranges = ["10.0.3.0/24"]
   target_tags = ["interne"]
   allow {
     protocol = "tcp"
     ports    = ["22"]
   }
+  source_ranges = ["10.0.3.0/24"]
 }
 
 resource "google_compute_firewall" "tcp-traitement" {
   name    = "tcp-traitement"
   network = google_compute_network.project_id.name
-  source_ranges = ["10.0.2.0/24"]
   target_tags = ["traitement"]
   allow {
     protocol = "tcp"
-    ports    = ["2846, 5462"]
+    ports    = ["2846", "5462"]
   }
+  source_ranges = ["10.0.2.0/24"]
 }

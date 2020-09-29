@@ -28,7 +28,8 @@ resource "google_compute_instance" "instance2" {
 
   boot_disk {
     initialize_params {
-      image = "fedora-coreos-cloud/fedora-coreos-stable"
+//      image = "fedora-coreos-cloud/fedora-coreos-stable"
+      image = "debian-cloud/debian-10"
     }
   }
 
